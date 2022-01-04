@@ -15,13 +15,13 @@ import java.util.Objects;
  * You can get elements from {@code MyArrayList}, find out the size.
  * Set a specific value to a specific index.
  *
- * @param <E>
+ * @param <T>
  * @see com.java.customarraylist.MyList
  *
  * @author Aleksandr Moroz
  */
 
-public class MyArrayList<E> implements MyList<E> {
+public class MyArrayList<T> implements MyList<T> {
 
     /**
      * Initial capacity
@@ -119,7 +119,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return {@code true}, if specified element successfully added
      */
     @Override
-    public boolean add(E e) {
+    public boolean add(T e) {
         if (index >= initArray.length) {
             Object[] newArray = new Object[initArray.length * 2];
             System.arraycopy(initArray, 0, newArray, 0, index - 1);
@@ -174,8 +174,8 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @SuppressWarnings("unchecked")
     @Override
-    public E get(int index) {
-        return (E) initArray[index];
+    public T get(int index) {
+        return (T) initArray[index];
     }
 
     /**
@@ -190,8 +190,8 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @SuppressWarnings("unchecked")
     @Override
-    public E set(int index, E element) {
-        E value = (E) initArray[index];
+    public T set(int index, T element) {
+        T value = (T) initArray[index];
         initArray[index] = element;
         return value;
     }
@@ -205,7 +205,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @param e element whose to be added
      */
     @Override
-    public void add(int index, E element) {
+    public void add(int index, T element) {
         if (index >= initArray.length) {
             Object[] newArray = new Object[initArray.length * 2];
             System.arraycopy(initArray, 0, newArray, 0, index - 1);
@@ -233,11 +233,11 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @SuppressWarnings("unchecked")
     @Override
-    public E remove(int index) {
+    public T remove(int index) {
         System.arraycopy(initArray, index + 1, initArray, index, this.index - index);
         arraySize--;
         this.index--;
-        return (E) initArray[index];
+        return (T) initArray[index];
     }
 
     /**

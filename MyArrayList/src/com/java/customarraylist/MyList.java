@@ -9,13 +9,13 @@ package com.java.customarraylist;
  * Can gets items from the collection, finds out the size.
  * Sets a specific value to a specific index.
  *
-* @param <E> type of objects in the custom list
+* @param <T> type of objects in the custom list
 *
 * @author Aleksandr Moroz
  */
 
 
-public interface MyList<E> {
+public interface MyList<T> {
 
         /**
          * This method returns count of elements in the custom list.
@@ -54,7 +54,7 @@ public interface MyList<E> {
          * @param e element whose to be added
          * @return {@code true}, if specified element successfully added
          */
-        public boolean add(E e);
+        public boolean add(T e);
 
         /**
          * This method deletes specified elements from custom list.
@@ -77,7 +77,7 @@ public interface MyList<E> {
          * @param index index by whose specified element will get
          * @return specified element by index from list
          */
-        public E get(int index);
+        public T get(int index);
 
         /**
          * This method replaces the element at the specified position in this list with the
@@ -88,7 +88,7 @@ public interface MyList<E> {
          * @param element element whose will set at the specified position
          * @return the element previously at the specified position
          */
-        public E set(int index, E element);
+        public T set(int index, T element);
 
         /**
          * This method adds specified elements by spicified index.
@@ -97,7 +97,7 @@ public interface MyList<E> {
          * @param index index by whose specified element will add
          * @param e element whose to be added
          */
-        public void add(int index, E element);
+        public void add(int index, T element);
 
         /**
          * This method adds specified elements by spicified index.
@@ -106,7 +106,7 @@ public interface MyList<E> {
          * @param index index by whose specified element will delete
          * @return the element at this position.
          */
-        public E remove(int index);
+        public T remove(int index);
 
         /**
          * This method gets the index of a specified element.
